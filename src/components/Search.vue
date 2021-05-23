@@ -51,8 +51,8 @@
             v-model:current-page="currentPage"
             @current-change="currentChange"
             layout="prev, pager, next"
-            :page-count="4"
             :page-size="pageSize"
+            :pager-count="4"
             :total="total">
         </el-pagination>
         <div>
