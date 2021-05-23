@@ -1,8 +1,8 @@
 <template>
   <div>
 
-      <el-menu :default-active="current" class="el-menu-demo" mode="horizontal" >
-        <el-menu-item :index='item.key' :key="item.key" v-for="item in list" @click="menuTo(item)">
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" >
+        <el-menu-item :index='item.path' :key="item.key" v-for="item in list" @click="menuTo(item)">
           <div> {{item.title}}</div>
         </el-menu-item>
       </el-menu>
@@ -35,15 +35,21 @@ export default {
           path: '/search'
         },
       ],
-      current: "1"
+      activeIndex: "/"
     }
   },
   methods: {
     menuTo(item) {
       this.$router.push(item.path)
-      this.current = item.key
+      this.activeIndex = item.path
+    },
+    getPath(){
+      this.activeIndex = this.$route.path
     }
-  }
+  },
+  watch:{
+    '$route':'getPath'
+  },
 }
 </script>
 
