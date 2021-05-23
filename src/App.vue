@@ -27,15 +27,15 @@ export default {
         {
           key: '1',
           title: '每日推荐',
-          path: '/'
+          path: '/vueGallery/'
         },
         {
           key: '2',
           title: '搜索',
-          path: '/search'
+          path: '/vueGallery/search'
         },
       ],
-      activeIndex: "/"
+      activeIndex: "/vueGallery"
     }
   },
   methods: {

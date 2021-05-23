@@ -3,8 +3,8 @@ import Index from "../components/Index"
 import Search from "@/components/Search";
 
 const routes = [
-    {path: '/', component: Index},
-    {path: '/search', component: Search},
+    {path: '/vueGallery/', component: Index},
+    {path: '/vueGallery/search', component: Search},
 ]
 
 

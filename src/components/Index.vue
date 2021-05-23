@@ -148,7 +148,7 @@ export default {
       })
     },
     toSearchPage(){
-      this.$router.push({path:'/search',params:{
+      this.$router.push({path:'/vueGallery/search',params:{
         keyword:this.keywords
         }})
     }
