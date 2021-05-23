@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: "/vueGallery/dist/"
+    publicPath: process.env.NODE_ENV === 'production'
+    ?'/vueGallery'
+        :'/'
 };
