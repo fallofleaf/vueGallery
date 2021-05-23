@@ -5,7 +5,7 @@
         <div style="text-align: -webkit-center;height: 300px">
           <span>基于Pixabay的图片搜索网站</span>
           <div style="display: flex;width: 80%">
-            <el-input v-model="keyWords"   placeholder="关键字"></el-input>
+            <el-input v-model="keyWords" @change="toSearchPage"  placeholder="关键字"></el-input>
             <el-button type="primary" @click="toSearchPage" style="margin-left: 8px">搜索</el-button>
           </div>
 
@@ -146,9 +146,12 @@ export default {
         console.log(reason)
       })
     },
+    // 注意这里要用name传参
     toSearchPage(){
-      this.$router.push({path:'/vueGallery/search',params:{
-        keyword:this.keywords
+      // console.log(this.keyWords)
+      let temp = this.keyWords
+      this.$router.push({name:'Search',params:{
+        keyword:temp
         }})
     }
 

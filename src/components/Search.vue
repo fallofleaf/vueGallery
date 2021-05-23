@@ -84,15 +84,21 @@ export default {
     msg: String
   },
   mounted() {
-    if (this.$route.params.keyWord !=null) {
-      this.keyWords = this.$route.params.keyWord
+    let keyWord = this.$route.params.keyword;
+    if (keyWord !=null) {
+      this.keyWords = keyWord
     }else {
       this.keyWords = 'flowers'
     }
+    console.log('s')
+    console.log(this.$route.path)
+    console.log(this.$route.params)
     this.searchByKey()
   },
   setup() {
+
     return {
+
     };
   },
   data() {
