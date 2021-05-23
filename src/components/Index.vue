@@ -9,10 +9,7 @@
             <el-button type="primary" @click="toSearchPage" style="margin-left: 8px">搜索</el-button>
           </div>
 
-
-
         </div>
-
 
         <div id="img_gallery">
           <div class="card parent_container" :key="photo.id" v-for="photo in gallery">
@@ -37,14 +34,16 @@
         </div>
       </el-main>
 
-      <el-footer>
+      <el-footer >
         <el-pagination
+            style="width: 100%"
             :hide-on-single-page="true"
             background
             v-model:current-page="currentPage"
             @current-change="currentChange"
             layout="prev, pager, next"
             :page-size="pageSize"
+            :pager-count="4"
             :total="total">
         </el-pagination>
         <div>
